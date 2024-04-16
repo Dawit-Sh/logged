@@ -1,15 +1,20 @@
-import getPostMetadata from "../components/getPostMetadata";
-import PostPreview from "../components/PostPreview";
+import getPostMetadata from "@/components/getPostMetadata"
+import PostList from "@/components/PostList"
 
 const HomePage = () => {
-  const postMetadata = getPostMetadata();
-  const postPreviews = postMetadata.map((post) => (
-    <PostPreview key={post.slug} {...post} />
-  ));
-
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">{postPreviews}</div>
-  );
-};
-
-export default HomePage;
+	const postMetadata = getPostMetadata()
+	return (
+		<div>
+			<h1 className="font-kasei font-bold text-4xl pb-8">Blog</h1>
+			{postMetadata &&
+				postMetadata
+					.sort(
+						(a, b) =>
+							new Date(b.date).getDate() -
+							new Date(a.date).getDate()
+					)
+					.map((post) => <PostList key={post.slug} {...post} />)}
+		</div>
+	)
+}
+export default HomePage
