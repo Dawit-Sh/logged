@@ -1,14 +1,6 @@
 import "../styles/globals.css";
-import { Kaisei_Decol } from "@next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-
-const kasei = Kaisei_Decol({
-  variable: "--font-kasei",
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -45,7 +37,7 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body className={`${kasei.variable}`}>
+      <body>
         <main className="max-w-2xl px-6 mx-auto">
           {header}
           {children}
