@@ -1,6 +1,14 @@
+import "../styles/globals.css";
+import { Kaisei_Decol } from "@next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import "../styles/globals.css";
+
+const kasei = Kaisei_Decol({
+  variable: "--font-kasei",
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -9,7 +17,7 @@ export default function RootLayout({
 }) {
   const header = (
     <header>
-      <div className="text-center bg-slate-800 p-8 my-6 rounded-md">
+      <div className="p-8 my-6 text-center rounded-md bg-slate-800">
         <Image
           src="/logo.png"
           width={40}
@@ -18,30 +26,31 @@ export default function RootLayout({
           alt={"logo"}
         />
         <Link href="/">
-          <h1 className="text-2xl text-white font-bold mt-4">Logged</h1>
+          <h1 className="mt-4 text-2xl font-bold text-white">Logged</h1>
         </Link>
-        <p className="text-slate-300">Where Your Errors are logged and solved.</p>
+        <p className="text-slate-300">
+          Where Your Errors are logged and solved.
+        </p>
       </div>
     </header>
   );
 
   const footer = (
     <footer>
-      <div className="border-t border-slate-400 mt-12 py-6 text-center text-slate-400">
+      <div className="py-6 mt-12 text-center border-t border-slate-400 text-slate-400">
         <h3>Davana</h3>
       </div>
     </footer>
   );
-
   return (
     <html>
       <head />
-      <body>
-        <div className="mx-auto  max-w-2xl px-6">
+      <body className={`${kasei.variable}`}>
+        <main className="max-w-2xl px-6 mx-auto">
           {header}
           {children}
           {footer}
-        </div>
+        </main>
       </body>
     </html>
   );

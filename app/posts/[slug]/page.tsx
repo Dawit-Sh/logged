@@ -1,7 +1,7 @@
 import fs from "fs";
 import Markdown from "markdown-to-jsx";
 import matter from "gray-matter";
-import getPostMetadata from "../../../components/getPostMetadata";
+import getPostMetadata from "@/components/getPostMetadata";
 
 const getPostContent = (slug: string) => {
   const folder = "posts/";
@@ -25,14 +25,15 @@ const PostPage = (props: any) => {
     <div>
       <div className="my-12 text-center">
         <h1 className="text-2xl text-slate-600 ">{post.data.title}</h1>
-        <p className="text-slate-400 mt-2">{post.data.date}</p>
+        <p className="mt-2 text-slate-400">{post.data.date}</p>
       </div>
 
-      <article className="prose">
+      <article
+        className="pb-8 prose prose-quoteless prose-neutral md:prose-lg  prose-h2:font-kasei"
+      >
         <Markdown>{post.content}</Markdown>
       </article>
     </div>
   );
 };
-
 export default PostPage;
