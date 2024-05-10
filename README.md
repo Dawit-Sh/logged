@@ -1,13 +1,10 @@
 <div align="center">
-<img src="logged.png" alt="logged logo">
 <h1>Logged</h1>
 </div>
 <p align="center"> A simpler Stack Overflow to track your problems </p>
 
 <div align="center">
-<p><img src="https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"></p> 
-<p><img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"></p>
-<p><img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"></p>
+<p><img src="https://img.shields.io/badge/Tailwind-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"><img src="https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white"><img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white"></p>
 </div>
 
 <h1> About </h1>
